@@ -8,6 +8,11 @@ targets:
   cloudwatch2sqlite:
     main: src/cloudwatch2sqlite.cr
 
+dependencies:
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+
+
 crystal: 1.6.2
 
 license: MIT
