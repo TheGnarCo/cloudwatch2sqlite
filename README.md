@@ -1,21 +1,25 @@
 # cloudwatch2sqlite
 
-TODO: Write a description here
+A simple command line utility for receiving AWSCloudWatch NGINX log data and inserting it into a sqlite database for further analysis. 
 
 ## Installation
 
-TODO: Write installation instructions here
+This utility was built using crystal lang. Install Crystal and run `make`.
 
 ## Usage
 
-TODO: Write usage instructions here
+The `-h` flag lists all options. Specifying the sqlite3 database flag (via `-d`) as the FIRST option is required.
 
-## Development
+### Insert log data from stdin
+`cat access.log | ./cloudwatch2sqlite -d db/cloudwatch2sqlite`
 
-TODO: Write development instructions here
+### Truncate the database (Remove all rows from log_entries datable)
+`./cloudwatch2sqlite -d db/cloudwatch2sqlite --truncate`
+
+### Initialize database (create log_entries table)
+`./cloudwatch2sqlite -d db/cloudwatch2sqlite --initialize`
 
 ## Contributing
-
 1. Fork it (<https://github.com/your-github-user/cloudwatch2sqlite/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
@@ -24,4 +28,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Nicholas Maloney](https://github.com/your-github-user) - creator and maintainer
+- [Nick Maloney / The Gnar Co.](https://github.com/ngmaloney) - creator and maintainer
