@@ -1,6 +1,6 @@
 # cloudwatch2sqlite
 
-A simple command line utility for receiving AWSCloudWatch NGINX log data and inserting it into a sqlite database for further analysis. 
+A simple command line utility for receiving AWSCloudWatch NGINX log data and inserting it into a sqlite database for further analysis. Source data is ingested via STDIN stream.
 
 ## Installation
 
