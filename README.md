@@ -1,6 +1,6 @@
 # cloudwatch2sqlite
 
-A simple command line utility for receiving AWSCloudWatch NGINX log data and inserting it into a sqlite database for further analysis. Source data is ingested via STDIN stream.
+A simple command line utility for receiving AWSCloudWatch NGINX log data and inserting it into a sqlite database for further analysis. Source data is ingested via STDIN stream directly from the `awslogs` cli utility.
 
 ## Installation
 
@@ -11,7 +11,7 @@ This utility was built using crystal lang. Install Crystal and run `make`.
 The `-h` flag lists all options. Specifying the sqlite3 database flag (via `-d`) as the FIRST option is required.
 
 ### Insert log data from stdin
-`cat access.log | ./cloudwatch2sqlite -d db/cloudwatch2sqlite`
+`awslogs get /aws/elasticbeanstalk/web/var/log/nginx/access.log | ./cloudwatch2sqlite -d db/cloudwatch2sqlite`
 
 ### Truncate the database (Remove all rows from log_entries datable)
 `./cloudwatch2sqlite -d db/cloudwatch2sqlite --truncate`
